@@ -6,4 +6,11 @@ overview of core python concepts with examples
   2. initalize a local repo in the directory contianing the code you want to save to the repo repo (git init) 
   3. add and commit the files you want to track to the local repo (1.git add . , 2.git commit -am 'commit it all')
   4. copy the HTTPS URL of the new repo from github(here) and add the repo address as an uppstream remote repo on your local 
-      "git remote add origin 
+      ```gitbash
+         git remote add origin https://github.com/zack-carideo/python_basics.git
+      ```
+      
+  5. push the local code to the newly created remote branch 
+      ```gitbash
+         git push -f origin master
+      ```
