@@ -1,7 +1,7 @@
 # python_basics
 overview of core python concepts with examples
 
-# Creating and tracking local code in remote Gitrepo
+### Creating and tracking local code in remote Gitrepo
 ##### Situation: code is saved on local and you need to link your local code to the repo(without loosing code)? 
   1. create a blank repo on github
   2. initalize a local repo in the directory contianing the code you want to save to the repo repo
