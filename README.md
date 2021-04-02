@@ -10,7 +10,7 @@ overview of core python concepts with examples
   ```bash
      ssh-keygen -t ed25519 -C "zjc1002@gmail.com"
   ```
-  3. add ssh key to ssh-agent (below works on windows10 dual boot 64 bit with wsl2) 
+  3. add ssh key to ssh-agent (below works on windows10 dual boot 64 bit with wsl2, did this within wsl2, so watchout) 
   ```bash
      ssh-agent /bin/sh
      ssh-add ~/.ssh/id_ed25519
