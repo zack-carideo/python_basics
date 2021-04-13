@@ -19,6 +19,10 @@ property method:
 @property decorator:
     built in function that creates and returns a property object.
 
+
+_repr_() dunder: python dunder method used to generate a string representation of a class object to enable replication(i.e. using eval())
+
+
 '''
 
 # example class with property object used to define what functions to call
@@ -28,6 +32,11 @@ property method:
 class person:
     def __init__(self, name):
         self.__name=name
+
+    #return a string representation of the class object when called (aka an uninitalized instance of person or an existing instance of person())
+    def __repr__(self):
+        return f"{self.__class__.__name__}({', '.join([f'{k}={v!r}' for k,v in self.__dict__.items() ])})"
+
     def setname(self, name):
         print('setname() called')
         self.__name=name
