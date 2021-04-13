@@ -615,14 +615,24 @@ def collect_jl(output_dir,entityname,jobname):
 ######################
 #pickle file save/load
 ######################
-#saving dictonary to pickle file 
+#saving dictonary to pickle file
 with open(r"someobject.pickle", "wb") as output_file:
     cPickle.dump(d, output_file)
    
 #open pickle file 
  with open(r"someobject.pickle", "rb") as input_file:
      e = cPickle.load(input_file)
-   
+
+########################
+##YAML FILES READ/WRITE#
+########################
+#load yaml to dictionary
+import yaml
+with open(r'C:\Users\zjc10\Desktop\Projects\data\example_data\example_yaml.yaml') as file:
+    yaml_dict = yaml.load(file, Loader=yaml.FullLoader)
+
+
+
 #remove special characters from strings using translation tables 
 #remove special characters from all strings
 import string
