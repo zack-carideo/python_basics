@@ -24,3 +24,24 @@ def list_files(dir_path):
         if os.path.isfile(os.path.join(dir_path, name)):
         files.append(name)
     return files
+
+"""
+sys.getsizeof(): inspects the size of an object
+notice: both return the same information, one is a generator(yields one obs at a time when called), one is a list(saves all obs to memory)
+"""
+import sys
+import random
+_test_list = [random.randint(0,i) for i in range(1,100)]
+_test_gen = (random.randint(0,i) for i in range(1,100))
+print(sys.getsizeof(_test_list))
+print(sys.getsizeof(_test_gen))
+
+"""
+cProfile.run() : generates a readout of an operations execution time and total calls 
+"""
+import cProfile
+cProfile.run('sum(_test_list)') #list comprehension performance
+cProfile.run('sum(_test_gen)') #generator comprehension performance
+
+
+
