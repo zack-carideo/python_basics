@@ -44,5 +44,35 @@ assign_dict = {'top_10p': f"df['{rating_col}']> np.percentile(df['{rating_col}']
 df = df.assign(**{col_name: eval(condition2eval) for col_name, condition2eval in assign_dict.items()})
 
 '''
+categorical variable ops
+'''
+#identify all categoric variables in df
+cat_cols = df.select_dtypes(exclude=np.number).columns\
+    .tolist()
+
+#convert categopical columns into numeric indices (nominal categoric variables, non ordinal)
+df = df.assign(**{f'{col}_label': df[col].astype('category').cat.codes for col in cat_cols})
+
+'''
 merging/joining
 '''
+
+
+'''
+lag / lead ops
+'''
+
+def lagit(s: pd.Series , shift_by: int = None):
+    """function takes pandas series, and shifts the series by 'shift_by' to generate lags and leads as needed
+
+    Args:
+        s (pd.Series): series you want to generate lag/leads from 
+        shift_by (int, optional): interval of lag/lead you want to take 
+
+    Returns:
+        pd.Series -> returns the shifted series 
+    """
+    if shift is None:
+        return s 
+    else:
+        return s.shift(shift_by)
