@@ -97,7 +97,11 @@ cProfile.run('sum(_test_gen)') #generator comprehension performance
     
 
 - exec(object[, globals[, locals]])
-    - 
+    - object: String or code object. If string, it is parsed as a suite of Python statements which is executed (unless a syntax error occurs). 
+              If it is a code object, it is simply executed.
+    
+    - general information 
+        -  nonlocal, yield, and return statements may not be used outside of function defs even within the context of code passed to the exec(). The return value is None.
     
 - resources 
     - https://realpython.com/python-eval-function/
