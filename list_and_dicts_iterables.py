@@ -53,7 +53,6 @@ def sort_tup_list(loftups: List, sort_on: int = 0):
 
 """OVERVIEW OF MAP(https://realpython.com/python-map-function)
 
-
 map(function, iterable[, iterable1, iterable2,..., iterableN])
 
     - function: the function that transforms each original item into a new (transformed) item. 
